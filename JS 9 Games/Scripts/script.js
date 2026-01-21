@@ -42,7 +42,9 @@ function newGame() {
     document.querySelector('.player-1-panel').classList.remove('winner');
 }
 function rollDice() {
-    if (!isGameActive) return;
+    if (!isGameActive) {
+        return;
+    }
 
     const diceOne = Math.floor(Math.random() * 6) + 1;
     const diceTwo = Math.floor(Math.random() * 6) + 1;
@@ -66,7 +68,9 @@ function rollDice() {
 }
 
 function holdScore() {
-    if (!isGameActive) return;
+    if (!isGameActive) {
+        return;
+    }
 
     if (activePlayer === 0) {
         playerOneScore += roundScore;
@@ -118,3 +122,4 @@ rollBtn.addEventListener('click', rollDice);
 holdBtn.addEventListener('click', holdScore);
 
 newGame();
+
